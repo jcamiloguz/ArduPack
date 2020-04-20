@@ -1,0 +1,227 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Fondo/Fondo.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Personaje.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Brazo.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/infinite_bg.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Jugador.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Brazo.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Fuentes/Minecraft.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Sprites/Puntos.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/EnemySpawner.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Audio/Gravity-Falls-Theme-_8-Bit-Tribute-to-Gravity-Falls_-8-Bit-Universe.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/BotonReinicio.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sprites/jetpack.png" type="Texture" id=12]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 33.084
+height = 52.5681
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.3689
+height = 2.30215
+
+[sub_resource type="DynamicFont" id=3]
+size = 53
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1020.72, 17.5798 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4.32914, 37.2145 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 38.4448 )
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends AudioStreamPlayer
+
+"
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 254.827, 44.6648 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 44
+outline_size = 3
+font_data = ExtResource( 7 )
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.9487, 600.712 ],
+"_edit_vertical_guides_": [ 1783.18, 1597.54 ]
+}
+
+[node name="Background1" type="Sprite" parent="."]
+position = Vector2( 0.814514, 299.758 )
+texture = ExtResource( 1 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 1599, 299.654 )
+texture = ExtResource( 1 )
+
+[node name="Background3" type="Sprite" parent="."]
+position = Vector2( 3198, 299.654 )
+texture = ExtResource( 1 )
+
+[node name="Background4" type="Sprite" parent="."]
+position = Vector2( 4797, 299.654 )
+texture = ExtResource( 1 )
+
+[node name="Background5" type="Sprite" parent="."]
+position = Vector2( 6396, 299.654 )
+texture = ExtResource( 1 )
+
+[node name="Jugador" type="KinematicBody2D" parent="." groups=[
+"Jugador",
+]]
+position = Vector2( 288.505, 264.086 )
+script = ExtResource( 5 )
+
+[node name="Spr_jetpack" type="Sprite" parent="Jugador"]
+position = Vector2( -17.0807, 18.8813 )
+scale = Vector2( 3.22899, 3.22899 )
+texture = ExtResource( 12 )
+
+[node name="Spr_jugador" type="Sprite" parent="Jugador"]
+position = Vector2( -0.923988, -11.25 )
+scale = Vector2( 3.3207, 3.66059 )
+texture = ExtResource( 2 )
+offset = Vector2( 0.0406208, 0.119209 )
+
+[node name="Colision" type="CollisionShape2D" parent="Jugador"]
+position = Vector2( -1.1565, -5.61385 )
+shape = SubResource( 1 )
+
+[node name="Brazo" type="Area2D" parent="Jugador"]
+position = Vector2( 13.1211, -0.0688936 )
+script = ExtResource( 6 )
+
+[node name="Spr_brazo" type="Sprite" parent="Jugador/Brazo"]
+position = Vector2( -2.84451, -0.236496 )
+rotation = -4.92354e-06
+scale = Vector2( 1.89444, 2.08834 )
+texture = ExtResource( 3 )
+offset = Vector2( 12.6051, 0.570583 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Brazo"]
+position = Vector2( 14.372, 0.016571 )
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="puntaje" type="Label" parent="CanvasLayer"]
+anchor_left = 0.066
+anchor_top = 0.167
+anchor_right = 0.066
+anchor_bottom = 0.167
+margin_left = 1259.01
+margin_top = -65.6926
+margin_right = 1363.01
+margin_bottom = -11.6926
+custom_fonts/font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ltexto" type="Label" parent="CanvasLayer"]
+anchor_left = 0.066
+anchor_top = 0.167
+anchor_right = 0.066
+anchor_bottom = 0.167
+margin_left = 989.589
+margin_top = -65.316
+margin_right = 1242.59
+margin_bottom = -11.316
+custom_fonts/font = SubResource( 3 )
+text = "PUNTAJE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spr_puntaje" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 1051.31, 53.7626 )
+scale = Vector2( 1.76175, 1.76175 )
+texture = ExtResource( 8 )
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="container" type="Node" parent="EnemySpawner"]
+
+[node name="LimitesBalas" type="StaticBody2D" parent="." groups=[
+"Screen",
+]]
+position = Vector2( -520.099, 569.011 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitesBalas"]
+position = Vector2( 1431.25, 129.684 )
+shape = SubResource( 4 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LimitesBalas"]
+position = Vector2( 1433.76, -603.785 )
+shape = SubResource( 4 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LimitesBalas"]
+position = Vector2( 1433.76, -603.785 )
+shape = SubResource( 4 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LimitesBalas"]
+position = Vector2( 2408.79, -245.756 )
+scale = Vector2( 10, 10 )
+shape = SubResource( 5 )
+
+[node name="LimitesEnemigos" type="StaticBody2D" parent="." groups=[
+"Screen",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitesEnemigos"]
+position = Vector2( -88.5632, 314.66 )
+scale = Vector2( 1, 10 )
+shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -30.0
+autoplay = true
+script = SubResource( 7 )
+
+[node name="BotonReinicio" type="Area2D" parent="."]
+position = Vector2( 854.33, 283.792 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotonReinicio"]
+shape = SubResource( 8 )
+
+[node name="Label" type="Label" parent="BotonReinicio"]
+margin_left = -167.106
+margin_top = -37.8701
+margin_right = 181.894
+margin_bottom = 8.12994
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "¡HAS PERDIDO!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="BotonReinicio"]
+margin_left = -254.331
+margin_top = 3.18549
+margin_right = 269.669
+margin_bottom = 47.1855
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Pulsa aqui para reiniciar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="input_event" from="BotonReinicio" to="BotonReinicio" method="_on_Area2D_input_event"]

@@ -1,0 +1,6 @@
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\bin\Tools\Arduino-jetpack.dll
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\bin\Tools\Arduino-jetpack.pdb
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\obj\Tools\Arduino-jetpack.csprojAssemblyReference.cache
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\obj\Tools\Arduino-jetpack.csproj.CoreCompileInputs.cache
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\obj\Tools\Arduino-jetpack.dll
+C:\Juan Diego Informacion\Universidad\Sexto Semestre\Computación física\proyectos\Segundo proyecto\Ardu-pack\.mono\temp\obj\Tools\Arduino-jetpack.pdb
